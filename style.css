@@ -1,0 +1,119 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #fce4ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.contanier {
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.sol-resim,
+.sag-resim {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+.sol-resim {
+  left: 50px;
+}
+
+.sag-resim {
+  right: 50px;
+}
+
+.orta-metin {
+  text-align: center;
+  max-width: 400px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.orta-metin h1 {
+  color: #d81b60;
+  font-size: 2.2em;
+}
+
+.orta-metin p {
+  color: #4a148c;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.orta-metin p {
+  animation: fadeIn 3s ease-out 1s forwards;
+  opacity: 0;
+}
+
+@keyframes slideInLeft {
+  from {
+    left: -300px;
+  }
+
+  to {
+    left: 50px;
+  }
+}
+
+@keyframes slideInRight{
+    from {
+        right: -300px;
+    }
+
+    to {
+        right: 50px;
+    }
+}
+
+.sol-resim{
+    animation: slideInLeft 1.5s ease-out;
+}
+
+.sag-resim{
+    animation: slideInRight 1.5s ease-out;
+}
+
+.animasyon-cubugu{
+    width: 0;
+    height: 3px;
+    background-color: #ff4081;
+    margin: 10px auto 0 auto;
+    border-radius: 5px;
+    animation: fillBar 2s ease-out 4s forwards;
+}
+
+@keyframes fillBar{
+    from {width: 0;}
+    to {width: 100;}
+}
